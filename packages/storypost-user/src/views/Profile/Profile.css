@@ -1,0 +1,44 @@
+.ava-profile {
+  width: 150px;
+  height: 150px;
+}
+
+.profile-edit-button {
+  box-shadow: none;
+  border: 1px solid #eee;
+  font-size: 14px;
+}
+
+.profile-name {
+  margin-bottom: 15px;
+}
+
+.profile-icon {
+  width: 20px;
+  flex: 0 0 20px;
+  margin-right: 15px;
+  color: #767676;
+}
+
+.profile-icon-container {
+  margin-bottom: 5px;
+}
+
+.profile-divider {
+  box-shadow: inset 0 -1px #d1d1d1;
+  margin-bottom: 50px;
+}
+
+.profile-tab {
+  padding: 10px 0;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.profile-tab:last-child {
+  margin-right: 0;
+}
+
+.profile-tab.profile-tab--active {
+  border-bottom: 2px solid #000;
+}

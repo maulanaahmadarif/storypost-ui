@@ -1,0 +1,40 @@
+{
+  "name": "@storypost/library",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "maulanaahmadarif <maulanaahmdarif@gmail.com>",
+  "homepage": "https://github.com/maulanaahmadarif/storypost-ui#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maulanaahmadarif/storypost-ui.git"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 9009",
+    "build-lib": "babel src --out-dir lib --copy-files --no-copy-ignored && rm -rf lib/components/**/*.stories.js",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/maulanaahmadarif/storypost-ui/issues"
+  },
+  "dependencies": {
+    "@storybook/react": "^6.1.17",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2"
+  }
+}

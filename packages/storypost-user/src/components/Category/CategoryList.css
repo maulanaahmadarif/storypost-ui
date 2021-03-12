@@ -1,0 +1,36 @@
+.category-list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: space-between;
+  border-right: 1px solid #eee;
+}
+
+.category-list-item {
+  margin: 0 5px;
+  padding: 10px;
+}
+
+.category-list-item--active {
+  border-bottom: 2px solid #000;
+}
+
+.category-list-item-wrapper {
+  flex: 1;
+}
+
+.category-list-viewall {
+  width: 70px;
+  flex: 0 0 70px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.category-list-viewall--active {
+  border-bottom: 2px solid #000;
+}
+
+.category-list-container {
+  display: flex;
+}
