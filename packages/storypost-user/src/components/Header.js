@@ -51,7 +51,7 @@ const Header = () => {
             <div className="col-3">
               <div className="fx align-items-center justify-content-end">
                 <div>
-                  <span className="mr--1"><Button text="Events" /></span>
+                  <span className="mr--1"><Link to="/challenge"><Button text="Events" /></Link></span>
                   <span><Button text={<FontAwesomeIcon icon={faPlus} />} /></span>
                 </div>
                 <div className="ava-wrapper" ref={dropdownRef}>

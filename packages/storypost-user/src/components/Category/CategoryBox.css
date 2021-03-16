@@ -3,11 +3,16 @@
   box-shadow: 0 4px 24px rgb(0 0 0 / 4%);
   border-radius: 6px;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .category-box-header {
   height: 135px;
   overflow: hidden;
+}
+
+.category-box-header.category-box-header-challenge {
+  height: 200px;
 }
 
 .category-box-header img {

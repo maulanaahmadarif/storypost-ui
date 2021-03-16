@@ -16,6 +16,32 @@
   position: relative;
 }
 
+.photo-grid-image {
+  position: relative;
+}
+
+.photo-link-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.photo-grid-item .swiper-pagination {
+  bottom: 70px;
+}
+
+.photo-grid-item .swiper-button-next::after {
+  font-size: 24px;
+}
+
+.photo-grid-item .swiper-button-prev::after {
+  font-size: 24px;
+}
+
 .photo-grid-item img {
   width: 100%;
 }
@@ -30,6 +56,7 @@
   width: 100%;
 
   background-image: linear-gradient(to bottom, transparent 10%, rgba(0, 0, 0, .7));
+  z-index: 2;
 }
 
 .photo-detail-ava-image {

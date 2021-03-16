@@ -4,6 +4,8 @@ import Category from './views/Category/Category'
 import CategoryDetail from './views/Category/CategoryDetail'
 import Profile from './views/Profile/Profile'
 import EditProfile from './views/Profile/EditProfile'
+import Challenge from './views/Challenge'
+import ChallengeDetail from './views/Challenge/ChallengeDetail'
 import NotFound from './views/NotFound'
 
 const routes = [
@@ -39,6 +41,17 @@ const routes = [
     name: 'Category',
     path: '/category/:name',
     component: CategoryDetail
+  },
+  {
+    name: 'Challenge',
+    path: '/challenge',
+    component: Challenge,
+    exact: true
+  },
+  {
+    name: 'ChallengeDetail',
+    path: '/challenge/:name',
+    component: ChallengeDetail
   },
   {
     name: '404',
