@@ -192,3 +192,9 @@ textarea.uploaded-input-field:focus {
   left: 0;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .upload-modal-form-instruction {
+    display: block;
+  }
+}

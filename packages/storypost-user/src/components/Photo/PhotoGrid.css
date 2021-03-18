@@ -5,6 +5,10 @@
   align-items: start;
 }
 
+.photo-grid-container-one {
+  grid-template-columns: repeat(var(--columns),minmax(0,1fr));
+}
+
 .photo-grid-column {
   display: grid;
   row-gap: 24px;

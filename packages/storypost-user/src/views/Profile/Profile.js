@@ -18,7 +18,7 @@ const Profile = () => {
       <div className="container">
         <div className="row justify-content-center category-title-row">
           <div className="col-md-8">
-            <div className="fx">
+            <div className="profile-bio-wrapper">
               <div className="mr--2">
                 <div className="ava ava-profile">
                   <img src="https://image.flaticon.com/icons/png/512/147/147144.png" alt=""/>

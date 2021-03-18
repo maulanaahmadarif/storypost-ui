@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faPlus, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import className from 'classnames'
 
 import { useSubmitModal } from '../context/AppProvider'
@@ -39,7 +39,7 @@ const Header = () => {
       <header>
         <div className="container-fluid">
           <div className="row align-items-center">
-            <div className="col-9">
+            <div className="col-10 col-sm-10 col-md-9">
               <div className="fx align-items-center">
                 <div className="logo header--logo">
                   <Link to="/">
@@ -51,9 +51,9 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="col-3">
+            <div className="col-2 col-sm-2 col-md-3">
               <div className="fx align-items-center justify-content-end">
-                <div>
+                <div className="header-button">
                   <span className="mr--1"><Link to="/challenge"><Button text="Events" /></Link></span>
                   <span><Button onClick={() => setShowSubmitModal(true)} text={<FontAwesomeIcon icon={faPlus} />} /></span>
                 </div>
@@ -65,7 +65,9 @@ const Header = () => {
                     <div className="ava-dropdown-wrapper">
                       <ul>
                         <li><Link to="/profile">Profile</Link></li>
-                        <li className="ava-li-divider"><Link to="/profile/edit">Settings</Link></li>
+                        <li><Link to="/profile/edit">Settings</Link></li>
+                        <li onClick={() => setShowSubmitModal(true)}>Add Photo</li>
+                        <li className="ava-li-divider"><Link to="/challenge">Events</Link></li>
                         <li><Link to="/">Logout @arif_maulana</Link></li>
                       </ul>
                     </div>
@@ -77,6 +79,12 @@ const Header = () => {
         </div>
       </header>
       <div className="header-category">
+        <div className="category-list-arrow category-list-arrow--left">
+          <span><FontAwesomeIcon icon={faChevronLeft} /></span>
+        </div>
+        <div className="category-list-arrow category-list-arrow--right">
+          <span><FontAwesomeIcon icon={faChevronRight} /></span>
+        </div>
         <div className="container-fluid">
           <div className="row">
             <div className="col">

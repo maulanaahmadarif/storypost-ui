@@ -15,6 +15,7 @@ header {
 
 .header-category {
   background-color: #fff;
+  position: relative;
 }
 
 .logo {
@@ -83,6 +84,7 @@ header {
 .ava-dropdown-wrapper ul {
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 .ava-dropdown-wrapper li {
@@ -97,4 +99,30 @@ header {
 
 li.ava-li-divider {
   border-bottom: 1px solid var(--gray);
+}
+
+.category-list-arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.category-list-arrow--left {
+  left: 10px;
+}
+
+.category-list-arrow--right {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .header-button {
+    display: none;
+  }
+
+  
+  .category-list-arrow {
+    display: block;
+  }
 }

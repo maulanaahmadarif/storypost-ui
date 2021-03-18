@@ -42,3 +42,18 @@
 .profile-tab.profile-tab--active {
   border-bottom: 2px solid #000;
 }
+
+.profile-bio-wrapper {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .profile-bio-wrapper {
+    display: block;
+  }
+  .ava-profile {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+}

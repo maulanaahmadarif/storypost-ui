@@ -33,4 +33,37 @@
 
 .category-list-container {
   display: flex;
+  position: relative;
+}
+
+/* .category-list-container::before, .category-list-container::after {
+  transition: opacity .2s ease-in-out;
+  opacity: 0;
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.category-list-container::before {
+  left: 0;
+  width: 100px;
+  background: linear-gradient(270deg,hsla(0,0%,100%,0) 0,#fff 95%,#fff);
+  opacity: 1;
+}
+
+.category-list-container::after {
+  right: 0;
+  width: 100px;
+  background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,#fff 95%,#fff);
+  opacity: 1;
+} */
+
+@media (max-width: 768px) {
+  .category-list-container {
+    overflow-x: scroll;
+  }
 }
