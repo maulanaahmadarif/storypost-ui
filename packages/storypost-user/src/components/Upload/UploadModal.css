@@ -1,0 +1,194 @@
+.upload-modal-close {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+}
+
+.upload-modal-close span {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.upload-modal-content {
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  max-height: 1600px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgb(0 0 0 / 15%);
+  min-width: 0;
+  margin: auto;
+  cursor: default;
+}
+
+.upload-modal-header {
+  padding: 8px 16px 10px;
+}
+
+.upload-modal-form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.upload-modal-form-upload {
+  padding-right: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  overflow: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-modal-content-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-modal-form-upload-input {
+  border: 2px dashed #d1d1d1;
+  border-radius: 2px;
+  color: #767676;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.upload-modal-form-button {
+  cursor: pointer;
+  text-align: center;
+  margin-top: auto;
+}
+
+.upload-modal-form-button-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.upload-modal-form-button-text span {
+  color: #007fff;
+}
+
+.upload-modal-form-instruction {
+  margin-top: auto;
+}
+
+.upload-modal-form-instruction {
+  display: flex;
+  justify-content: space-between;
+  max-width: 920px;
+  width: 100%;
+}
+
+.upload-modal-form-instruction li {
+  font-size: 14px;
+}
+
+.upload-modal-form-submit {
+  padding: 8px 16px;
+  border-top: 1px solid #d1d1d1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.upload-modal-form-submit .btn-upload {
+  box-shadow: none;
+  color: #767676;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+}
+
+.upload-modal-form-input-file {
+  display: none;
+}
+
+.add-more-box {
+  border: 2px dashed #d1d1d1;
+  border-radius: 2px;
+  color: #767676;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.add-more-box-button img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.add-more-box-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+}
+
+.uploaded-input-field {
+  font-size: 14px;
+  border-radius: 0;
+  border: 1px solid #d1d1d1;
+  padding: 7px 10px;
+}
+
+.uploaded-input-field:focus {
+  border-color: #767676;
+}
+
+textarea.uploaded-input-field {
+  border-top: 0;
+}
+
+textarea.uploaded-input-field:focus {
+  border-top: 1px solid #767676;
+}
+
+.uploaded-box-image {
+  margin-bottom: 20px;
+}
+
+.uploaded-image {
+  position: relative;
+}
+
+.floating-uploaded-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.floating-uploaded-close span {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .2s ease-in;
+}
+
+.uploaded-box-image:hover .floating-uploaded-close span {
+  opacity: 1;
+}
+
+.floting-uploaded-location {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}

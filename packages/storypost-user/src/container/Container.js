@@ -5,6 +5,7 @@ import {
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import UploadModal from '../components/Upload/UploadModal'
 import routes from '../routes'
 
 import './Container.css'
@@ -26,6 +27,7 @@ const Container = () => {
           )) }
         </Switch>
       </div>
+      <UploadModal />
     </div>
   )
 }

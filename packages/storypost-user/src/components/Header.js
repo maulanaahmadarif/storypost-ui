@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faPlus } from '@fortawesome/free-solid-svg-icons'
 import className from 'classnames'
 
+import { useSubmitModal } from '../context/AppProvider'
+
 import Input from '../components/Form/Input'
 import Button from '../components/Elements/Button'
 import CategoryList from '../components/Category/CategoryList'
@@ -16,6 +18,7 @@ import LogoWhite from '../assets/img/logo-white.png'
 const Header = () => {
   const dropdownRef = useRef()
   const [showDropDownAva, setShowDropDownAva] = useState(false)
+  const { setShowSubmitModal } = useSubmitModal()
 
   const handleClick = e => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -52,7 +55,7 @@ const Header = () => {
               <div className="fx align-items-center justify-content-end">
                 <div>
                   <span className="mr--1"><Link to="/challenge"><Button text="Events" /></Link></span>
-                  <span><Button text={<FontAwesomeIcon icon={faPlus} />} /></span>
+                  <span><Button onClick={() => setShowSubmitModal(true)} text={<FontAwesomeIcon icon={faPlus} />} /></span>
                 </div>
                 <div className="ava-wrapper" ref={dropdownRef}>
                   <div className="ava" onClick={() => setShowDropDownAva(true)}>

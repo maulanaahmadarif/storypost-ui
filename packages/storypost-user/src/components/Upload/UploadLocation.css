@@ -1,0 +1,30 @@
+.upload-location-field-locked {
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, .8);
+  font-size: 14px;
+  color: #fff;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+.upload-location-icon {
+  margin-right: 10px;
+}
+
+.input-location {
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+  width: 100%;
+}
+
+.input-location:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.upload-location-container {
+  padding: 0 15px;
+}
+
+.upload-location-field-locked {
+  display: inline-block;
+}

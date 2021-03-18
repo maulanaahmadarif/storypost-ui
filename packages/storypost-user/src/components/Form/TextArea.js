@@ -12,6 +12,8 @@ const TextArea = (props) => {
           props.className,
         )}
         name={props.name}
+        value={props.value}
+        onChange={props.onChange}
         id={props.id}
         placeholder={props.placeholder} />
     </div>

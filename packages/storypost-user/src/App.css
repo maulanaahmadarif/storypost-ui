@@ -41,3 +41,7 @@ input, a, button {
   display: flex;
   align-items: center;
 }
+
+.ReactModal__Content {
+  overflow: hidden !important;
+}
