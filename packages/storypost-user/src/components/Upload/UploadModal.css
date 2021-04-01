@@ -67,6 +67,20 @@
   margin-top: auto;
 }
 
+.upload-modal-form-button.upload-modal-form-button-edit {
+  margin-top: auto;
+  margin-bottom: auto;
+
+  display: flex;
+  justify-content: center
+}
+
+.upload-ratio {
+  margin-left: 30px;
+  max-width: 100px;
+  flex: 0 0 100px;
+}
+
 .upload-modal-form-button-text {
   font-size: 24px;
   font-weight: bold;
@@ -191,6 +205,21 @@ textarea.uploaded-input-field:focus {
   bottom: 10px;
   left: 0;
   width: 100%;
+}
+
+.upload-ration-item {
+  border: 1px solid #d1d1d1;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.upload-ration-item:hover {
+  background-color: #d1d1d1;
+}
+
+.edit-image-wrapper {
+  max-width: 75%;
+  flex: 0 0 75%;
 }
 
 @media (max-width: 768px) {

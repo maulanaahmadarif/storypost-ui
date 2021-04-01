@@ -9,7 +9,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9998;
+  z-index: 9996;
   box-shadow: 0 4px 12px rgb(0 0 0 / 8%), 0 0 1px rgb(1 0 0 / 10%);
 }
 
@@ -90,6 +90,7 @@ header {
 .ava-dropdown-wrapper li {
   padding: 8px 15px;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .ava-dropdown-wrapper li a {

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import cat1 from '../../assets/img/cat1.jpg'
+
 const ChallengeBox = (props) => {
   const {
     title,
@@ -11,7 +13,7 @@ const ChallengeBox = (props) => {
   return (
     <div className="category-box">
       <div className="category-box-header category-box-header-challenge">
-        <img src="https://via.placeholder.com/300x400" alt=""/>
+        <img src={cat1} alt=""/>
       </div>
       <div className="category-box-body">
         <p className="text--size-14">

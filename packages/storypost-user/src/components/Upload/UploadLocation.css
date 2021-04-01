@@ -28,3 +28,8 @@
 .upload-location-field-locked {
   display: inline-block;
 }
+
+.btn-image-edit {
+  width: 100%;
+  box-shadow: none;
+}

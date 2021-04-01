@@ -6,7 +6,13 @@ import PhotoItem from '../Photo/PhotoItem'
 
 import './PhotoGrid.css'
 
-const images = ["https://via.placeholder.com/400x400", "https://via.placeholder.com/400x400"]
+// IMAGES
+import cat1 from '../../assets/img/cat1.jpg'
+import cat2 from '../../assets/img/cat2.jpg'
+import room1 from '../../assets/img/room1.jpg'
+import people1 from '../../assets/img/people1.jpg'
+
+const images = [room1, cat2]
 
 const PhotoGrid = () => {
   const [width, _] = useWindowSize()
@@ -17,53 +23,53 @@ const PhotoGrid = () => {
         <>
           <div className="photo-grid-column">
             <PhotoItem images={images} />
-            <PhotoItem images={["https://via.placeholder.com/400x400"]} />
-            <PhotoItem images={["https://via.placeholder.com/500x400"]} />
-            <PhotoItem images={["https://via.placeholder.com/400x200"]} />
-            <PhotoItem images={["https://via.placeholder.com/300x200"]} />
-            <PhotoItem images={["https://via.placeholder.com/300x300"]} />
+            <PhotoItem images={[room1]} />
+            <PhotoItem images={[cat1]} />
+            <PhotoItem images={[people1]} />
+            <PhotoItem images={[cat2]} />
+            <PhotoItem images={[room1]} />
             <PhotoItem images={images} />
-            <PhotoItem images={["https://via.placeholder.com/500x400"]} />
+            <PhotoItem images={[cat1]} />
           </div>
           <div className="photo-grid-column">
-            <PhotoItem images={["https://via.placeholder.com/500x400"]} />
-            <PhotoItem images={["https://via.placeholder.com/300x400"]} />
-            <PhotoItem images={["https://via.placeholder.com/600x400"]} />
+            <PhotoItem images={[cat1]} />
+            <PhotoItem images={[room1]} />
+            <PhotoItem images={[cat2]} />
             <PhotoItem images={images} />
-            <PhotoItem images={["https://via.placeholder.com/200x200"]} />
-            <PhotoItem images={["https://via.placeholder.com/300x600"]} />
-            <PhotoItem images={["https://via.placeholder.com/200x300"]} />
-            <PhotoItem images={["https://via.placeholder.com/500x200"]} />
+            <PhotoItem images={[cat2]} />
+            <PhotoItem images={[cat1]} />
+            <PhotoItem images={[people1]} />
+            <PhotoItem images={[room1]} />
           </div>
           <div className="photo-grid-column">
             <PhotoItem images={images} />
-            <PhotoItem images={["https://via.placeholder.com/500x400"]} />
-            <PhotoItem images={["https://via.placeholder.com/400x400"]} />
-            <PhotoItem images={["https://via.placeholder.com/200x200"]} />
-            <PhotoItem images={["https://via.placeholder.com/200x400"]} />
+            <PhotoItem images={[cat1]} />
+            <PhotoItem images={[people1]} />
+            <PhotoItem images={[cat2]} />
+            <PhotoItem images={[room1]} />
             <PhotoItem images={images}/>
-            <PhotoItem images={["https://via.placeholder.com/200x200"]} />
-            <PhotoItem images={["https://via.placeholder.com/500x400"]} />
+            <PhotoItem images={[cat2]} />
+            <PhotoItem images={[cat1]} />
           </div>
         </>
       ) : (
         <div className="photo-grid-column">
           <PhotoItem images={images} />
-          <PhotoItem images={["https://via.placeholder.com/400x400"]} />
-          <PhotoItem images={["https://via.placeholder.com/500x400"]} />
-          <PhotoItem images={["https://via.placeholder.com/400x200"]} />
-          <PhotoItem images={["https://via.placeholder.com/300x200"]} />
-          <PhotoItem images={["https://via.placeholder.com/300x300"]} />
+          <PhotoItem images={[people1]} />
+          <PhotoItem images={[cat1]} />
+          <PhotoItem images={[people1]} />
+          <PhotoItem images={[cat2]} />
+          <PhotoItem images={[room1]} />
           <PhotoItem images={images} />
-          <PhotoItem images={["https://via.placeholder.com/500x400"]} />
+          <PhotoItem images={[cat1]} />
           <PhotoItem images={images} />
-          <PhotoItem images={["https://via.placeholder.com/400x400"]} />
-          <PhotoItem images={["https://via.placeholder.com/500x400"]} />
-          <PhotoItem images={["https://via.placeholder.com/400x200"]} />
-          <PhotoItem images={["https://via.placeholder.com/300x200"]} />
-          <PhotoItem images={["https://via.placeholder.com/300x300"]} />
+          <PhotoItem images={[people1]} />
+          <PhotoItem images={[cat1]} />
+          <PhotoItem images={[people1]} />
+          <PhotoItem images={[cat2]} />
+          <PhotoItem images={[room1]} />
           <PhotoItem images={images} />
-          <PhotoItem images={["https://via.placeholder.com/500x400"]} />
+          <PhotoItem images={[cat1]} />
         </div>
       ) }     
     </div>

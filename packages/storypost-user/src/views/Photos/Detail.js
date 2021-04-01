@@ -4,6 +4,8 @@ import PhotoGrid from '../../components/Photo/PhotoGrid'
 
 import './Detail.css'
 
+import people1 from '../../assets/img/people1.jpg'
+
 const Detail = () => {
   return (
     <div className="storypost-photo-detail">
@@ -28,7 +30,7 @@ const Detail = () => {
             </div>
             <div className="mb--1">
               <figure className="detail-image">
-                <img src="https://via.placeholder.com/400x500" alt=""/>
+                <img src={people1} alt=""/>
               </figure>
             </div>
           </div>

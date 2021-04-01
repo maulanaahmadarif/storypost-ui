@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faPlus, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import className from 'classnames'
+import { useHistory } from 'react-router-dom'
 
 import { useSubmitModal } from '../context/AppProvider'
 
@@ -19,6 +20,7 @@ const Header = () => {
   const dropdownRef = useRef()
   const [showDropDownAva, setShowDropDownAva] = useState(false)
   const { setShowSubmitModal } = useSubmitModal()
+  const history = useHistory()
 
   const handleClick = e => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -33,6 +35,11 @@ const Header = () => {
       document.removeEventListener("click", handleClick)
     }
   })
+
+  const handleClickMenu = (path) => {
+    history.push(path)
+    setShowDropDownAva(false)
+  }
 
   return (
     <div className="header-container">
@@ -64,11 +71,11 @@ const Header = () => {
                   <div className={className('ava-dropdown', { 'ava-dropdown--show': showDropDownAva })}>
                     <div className="ava-dropdown-wrapper">
                       <ul>
-                        <li><Link to="/profile">Profile</Link></li>
-                        <li><Link to="/profile/edit">Settings</Link></li>
+                        <li onClick={() => handleClickMenu("/profile")}>Profile</li>
+                        <li onClick={() => handleClickMenu("/profile/edit")}>Settings</li>
                         <li onClick={() => setShowSubmitModal(true)}>Add Photo</li>
-                        <li className="ava-li-divider"><Link to="/challenge">Events</Link></li>
-                        <li><Link to="/">Logout @arif_maulana</Link></li>
+                        <li onClick={() => handleClickMenu("/challenge")} className="ava-li-divider">Events</li>
+                        <li onClick={() => handleClickMenu("/")}>Logout @arif_maulana</li>
                       </ul>
                     </div>
                   </div>

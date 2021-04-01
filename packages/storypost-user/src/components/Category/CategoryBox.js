@@ -4,11 +4,13 @@ import { faImage } from '@fortawesome/free-solid-svg-icons'
 
 import './CategoryBox.css'
 
+import people1 from '../../assets/img/people1.jpg'
+
 const CategoryBox = (props) => {
   return (
     <div className="category-box">
       <div className="category-box-header">
-        <img src="https://via.placeholder.com/300x400" alt=""/>
+        <img src={people1} alt=""/>
       </div>
       <div className="category-box-body">
         <div className="mb--1">

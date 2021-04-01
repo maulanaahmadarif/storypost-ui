@@ -12,6 +12,8 @@ import '@storypost/library/lib/css/var.css';
 import '@storypost/library/lib/css/typography.css';
 import '@storypost/library/lib/css/global.css';
 
+import 'react-image-crop/dist/ReactCrop.css';
+
 import './App.css'
 
 ReactDOM.render(
