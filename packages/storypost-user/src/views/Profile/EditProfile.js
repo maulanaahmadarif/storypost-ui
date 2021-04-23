@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
+import { useAuth } from '../../components/AuthProvider'
 import Input from '../../components/Form/Input'
 import TextArea from '../../components/Form/TextArea'
 import Button from '../../components/Elements/Button'
@@ -9,6 +10,8 @@ import Button from '../../components/Elements/Button'
 import './EditProfile.css'
 
 const EditProfile = () => {
+  const { user } = useAuth()
+
   return (
     <div className="storypost-edit-profile">
       <div className="container">
@@ -21,7 +24,7 @@ const EditProfile = () => {
               <div className="row">
                 <div className="col-md-4">
                   <div className="ava ava-profile-edit">
-                    <img src="https://image.flaticon.com/icons/png/512/147/147144.png" alt=""/>
+                    <img src={user.picture} alt=""/>
                   </div>
                   <div>
                     <p className="mb--0 text--underline text--size-14 text--center">Change profile picture</p>
@@ -29,24 +32,18 @@ const EditProfile = () => {
                 </div>
                 <div className="col-md-8">
                   <div className="row">
-                    <div className="col-sm-6">
+                    <div className="col">
                       <div className="form--group">
-                        <label htmlFor="fName">First Name</label>
-                        <Input type="text" />
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="form--group">
-                        <label htmlFor="lName">Last Name</label>
-                        <Input type="text" />
+                        <label htmlFor="fName">Name</label>
+                        <Input type="text" id="fName" value={user.name} />
                       </div>
                     </div>
                   </div>
                   <div className="row">
                     <div className="col">
                       <div className="form--group">
-                        <label htmlFor="lName">Email Address</label>
-                        <Input type="email" />
+                        <label htmlFor="email">Email Address</label>
+                        <Input type="email" id="email" value={user.email} />
                       </div>
                     </div>
                   </div>

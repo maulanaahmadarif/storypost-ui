@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faPlus, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import className from 'classnames'
 import { useHistory } from 'react-router-dom'
-
+ 
 import { useSubmitModal } from '../context/AppProvider'
-
+import { useAuth } from '../components/AuthProvider'
 import Input from '../components/Form/Input'
 import Button from '../components/Elements/Button'
 import CategoryList from '../components/Category/CategoryList'
@@ -19,7 +19,8 @@ import LogoWhite from '../assets/img/logo-white.png'
 const Header = () => {
   const dropdownRef = useRef()
   const [showDropDownAva, setShowDropDownAva] = useState(false)
-  const { setShowSubmitModal } = useSubmitModal()
+  const { setShowSubmitModal, setShowLoginModal } = useSubmitModal()
+  const { user } = useAuth()
   const history = useHistory()
 
   const handleClick = e => {
@@ -39,6 +40,15 @@ const Header = () => {
   const handleClickMenu = (path) => {
     history.push(path)
     setShowDropDownAva(false)
+  }
+
+  const logout = () => {
+    setShowDropDownAva(false)
+
+    localStorage.removeItem('story_token')
+    localStorage.removeItem('story_expiry')
+
+    setShowLoginModal(true)
   }
 
   return (
@@ -66,7 +76,7 @@ const Header = () => {
                 </div>
                 <div className="ava-wrapper" ref={dropdownRef}>
                   <div className="ava" onClick={() => setShowDropDownAva(true)}>
-                    <img src="https://image.flaticon.com/icons/png/512/147/147144.png" alt=""/>
+                    <img src={user.picture} alt=""/>
                   </div>
                   <div className={className('ava-dropdown', { 'ava-dropdown--show': showDropDownAva })}>
                     <div className="ava-dropdown-wrapper">
@@ -75,7 +85,7 @@ const Header = () => {
                         <li onClick={() => handleClickMenu("/profile/edit")}>Settings</li>
                         <li onClick={() => setShowSubmitModal(true)}>Add Photo</li>
                         <li onClick={() => handleClickMenu("/challenge")} className="ava-li-divider">Events</li>
-                        <li onClick={() => handleClickMenu("/")}>Logout @arif_maulana</li>
+                        <li onClick={logout}>Logout { user.name }</li>
                       </ul>
                     </div>
                   </div>

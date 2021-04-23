@@ -1,11 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const AppContext = React.createContext()
 
 const AppProvider = (props) => {
   const [showSubmitModal, setShowSubmitModal] = useState(false)
+  const [showLoginModal, setShowLoginModal] = useState(false)
 
-  const value = { showSubmitModal, setShowSubmitModal }
+  useEffect(() => {
+    const htmlDom = document.querySelector('html')
+
+    if (showLoginModal || showSubmitModal) {
+      htmlDom.classList.add('no-scroll')
+    } else {
+      htmlDom.classList.remove('no-scroll')
+    }
+  }, [showLoginModal, showSubmitModal])
+
+  const value = {
+    showSubmitModal,
+    setShowSubmitModal,
+    showLoginModal,
+    setShowLoginModal
+  }
   return <AppContext.Provider value={value}>{ props.children }</AppContext.Provider>
 }
 

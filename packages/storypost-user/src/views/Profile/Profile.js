@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faGlobeAsia, faMapMarkerAlt, faImage, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
+import { useAuth } from '../../components/AuthProvider'
+
 import Button from '../../components/Elements/Button'
 import PhotoGrid from '../../components/Photo/PhotoGrid'
 
@@ -12,6 +14,7 @@ import './Profile.css'
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState(0)
+  const { user } = useAuth()
 
   return (
     <div className="storypost-profile">
@@ -21,14 +24,14 @@ const Profile = () => {
             <div className="profile-bio-wrapper">
               <div className="mr--2">
                 <div className="ava ava-profile">
-                  <img src="https://image.flaticon.com/icons/png/512/147/147144.png" alt=""/>
+                  <img src={user.picture} alt=""/>
                 </div>
               </div>
               <div>
                 <div className="fx align-items-center profile-name">
                   <div className="mr--1">
                     <h1 className="text--big mb--0">
-                      Arif Maulana
+                      { user.name }
                     </h1>
                   </div>
                   <div>

@@ -1,0 +1,32 @@
+.login-wrapper {
+  cursor: default;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.login-content {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.login-button-wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.login-fb span {
+  color: #3b5998;
+  font-size: 50px;
+}
+
+.login-sso img {
+  width: 100px;
+}
+
+.login-button {
+  margin: 0 15px;
+  cursor: pointer;
+}
