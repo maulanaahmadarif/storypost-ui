@@ -3,6 +3,7 @@ import jwtDecode from 'jwt-decode'
 
 import { oauth, setLocalAuth } from '../utils/oauth'
 import { useSubmitModal } from '../context/AppProvider'
+import { register } from '../api/auth'
 
 const AuthContext = React.createContext()
 
@@ -28,9 +29,30 @@ const AuthProvider = (props) => {
     const token = localStorage.getItem('story_token')
     if (!token) {
       oauth.code.getToken(`/${window.location.search}`)
-        .then((res) => {
+        .then(async (res) => {
           console.log(res)
+
           const decodedJWT = jwtDecode(res.accessToken)
+
+          console.log(decodedJWT)
+
+          const registerData = {
+            Username: decodedJWT.email,
+            Password: "random",
+            Name: decodedJWT.name,
+            Phone: null,
+            Facebook: null,
+            Twitter: null,
+            Instagram: null,
+            Picture: null,
+            Email: decodedJWT.email
+          }
+    
+          try {
+            await register(registerData)
+          } catch(err) {
+            console.log(err)
+          }
 
           setLoggedInUser(decodedJWT)
 

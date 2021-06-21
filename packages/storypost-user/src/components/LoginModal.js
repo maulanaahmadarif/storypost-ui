@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Modal from 'react-modal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
@@ -8,6 +8,7 @@ import sign from 'jwt-encode'
 import { useSubmitModal } from '../context/AppProvider'
 import { useAuth } from '../components/AuthProvider'
 import { oauth, setLocalAuth } from '../utils/oauth'
+import { register } from '../api/auth'
 
 import './LoginModal.css'
 
@@ -37,21 +38,45 @@ const LoginModal = () => {
     window.location.href = oauth.code.getUri()
   }
 
-  const responseFacebook = (res) => {
-    setShowLoginModal(false)
-    const { name, email, _, data_access_expiration_time, picture } = res
+  const responseFacebook = async (res) => {
+    console.log(res)
+    const { status } = res
 
-    const data = {
-      name,
-      email,
-      picture: picture.data.url
+    if (status !== 'unknown') {
+      const { id, name, email, data_access_expiration_time, picture } = res
+
+      const data = {
+        name,
+        email,
+        picture: picture.data.url
+      }
+
+      setUser(data)
+
+      const registerData = {
+        Username: email,
+        Password: "random",
+        Name: name,
+        Phone: null,
+        Facebook: id,
+        Twitter: null,
+        Instagram: null,
+        Picture: data.picture,
+        Email: email
+      }
+
+      try {
+        await register(registerData)
+      } catch(err) {
+        console.log(err)
+      }
+
+      const accessToken = sign(data, 'SECRET'); 
+
+      setLocalAuth(accessToken, data_access_expiration_time, 'fb')
+
+      setShowLoginModal(false)
     }
-
-    setUser(data)
-
-    const accessToken = sign(data, 'SECRET'); 
-
-    setLocalAuth(accessToken, data_access_expiration_time, 'fb')
   }
 
   return (
@@ -73,8 +98,8 @@ const LoginModal = () => {
               </div>
               <div className="login-button login-fb">
                 <FacebookLogin
-                  appId="456344162301086"
-                  fields="name,email,picture"
+                  appId="170142578306155"
+                  fields="id,name,email,picture,short_name"
                   callback={responseFacebook}
                   redirectUri={window.origin}
                   version="10.0"
