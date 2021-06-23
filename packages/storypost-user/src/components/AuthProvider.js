@@ -5,6 +5,7 @@ import { oauth, setLocalAuth } from '../utils/oauth'
 import { useSubmitModal } from '../context/AppProvider'
 import { register } from '../api/auth'
 
+
 const AuthContext = React.createContext()
 
 const AuthProvider = (props) => {
@@ -35,10 +36,20 @@ const AuthProvider = (props) => {
           const decodedJWT = jwtDecode(res.accessToken)
 
           console.log(decodedJWT)
+          var CryptoJS = require("crypto-js");
+          var key = CryptoJS.enc.Utf8.parse('7061737323313233');
+          var iv = CryptoJS.enc.Utf8.parse('7061737323313233');
+          const hasPass = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(decodedJWT.email), key,
+          {
+              keySize: 128 / 8,
+              iv: iv,
+              mode: CryptoJS.mode.CBC,
+              padding: CryptoJS.pad.Pkcs7
+          });
 
           const registerData = {
             Username: decodedJWT.email,
-            Password: "random",
+            Password: hasPass.toString(),
             Name: decodedJWT.name,
             Phone: null,
             Facebook: null,
@@ -49,8 +60,14 @@ const AuthProvider = (props) => {
           }
     
           try {
-            await register(registerData)
-          } catch(err) {
+            // notes
+            // 1. login dengan registerData
+            // 2. kalau return gagal, register account
+            // 3. login lagi untuk get token
+            // 4. set token user di localStorage, dipakai untuk identity id ketika post/ like
+
+            await register(registerData);
+          } catch (err) {
             console.log(err)
           }
 
